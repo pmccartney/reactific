@@ -48,6 +48,39 @@ export default class GameList extends React.Component {
 		this.shouldComponentUpdate = shouldComponentUpdate;
 	}
 
+	componentDidMount() {
+		const {
+			getGames
+		} = this.props;
+
+		// For the top level components, calling any actions that retrieve
+		// data is done in the componentDidMount.
+		getGames();
+	}
+
+	bindMethods() {
+		//  Pre-bind the callbacks.
+		//  By doing this, you can set these right into the onClick events.
+		//  If you do onClick={{} => this.onEditGame}
+		//  then it recreates an anoymous function EVERY time it updates.
+		//  With this, you can just do onClick={this.onEditGame}
+		this.onNewGame = this.onNewGame.bind(this);
+		this.onEditGame = this.onEditGame.bind(this);
+		this.onDeleteGame = this.onDeleteGame.bind(this);
+	}
+
+	onNewGame(id) {
+		// TODO
+	}
+
+	onEditGame(id) {
+		// TODO
+	}
+
+	onDeleteGame(id) {
+		// TODO
+	}
+
 	renderGameList() {
 		const {
 			games,

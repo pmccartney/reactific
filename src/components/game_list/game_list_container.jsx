@@ -1,7 +1,7 @@
 import GameList from "components/game_list/game_list";
 
 //  Redux
-import GameListSelector from "selectors/game_list_selector";
+import GameListSelector from "selectors/game_selector";
 import { bindActionCreators } from "redux";
 import { containerFactory } from "helpers/redux_helpers";
 
@@ -10,7 +10,7 @@ import {
 	editGame,
 	deleteGame,
 	getGames
-} from "actions/game_actions";
+} from "actions/game_list_actions";
 
 // The container calls containerFactory.
 // All it is doing is calling connect and settign up the Provider with the
